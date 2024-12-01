@@ -37,6 +37,7 @@ const userSignup = asyncHandler(async (req, res) => {
 			password: hashedPassword,
 			gender,
 			profilePic: gender === "male" ? boyProfilePic : girlProfilePic,
+			bio: ""
 		});
 
 		if (newUser) {
@@ -59,7 +60,7 @@ const userSignup = asyncHandler(async (req, res) => {
 				fullName: newUser.fullName,
 				email: newUser.email,
 				gender:gender,
-				bio: user.bio,
+				bio: user.bio || "",
 				profilePic: newUser.profilePic,
 			});
 		} else {
