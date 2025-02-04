@@ -24,7 +24,7 @@ const SignUp = () => {
     const isSignup = await signup(inputs);
     if (isSignup) {
       setInputs({});
-      Navigate("/");
+      Navigate("/login");
     }
   };
 

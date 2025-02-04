@@ -43,7 +43,7 @@ const userSignup = asyncHandler(async (req, res) => {
 			await newUser.save();
 			const notificationMessage = {
                 notification: `New user ${fullName} has joined! Say Hello`,
-                sender: "System", // Set sender as "System" or any identifier
+                sender: "System",
                 senderName: "Chat Mate",
                 message: `${fullName} registered successfully.`,
                 time: new Date().toLocaleTimeString("en-US", {
@@ -59,7 +59,7 @@ const userSignup = asyncHandler(async (req, res) => {
 				fullName: newUser.fullName,
 				email: newUser.email,
 				gender:gender,
-				bio: user.bio,
+				bio: newUser.bio || "",
 				profilePic: newUser.profilePic,
 			});
 		} else {
